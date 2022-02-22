@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-mysql-bootstrap-users-management",
+  "version": "1.0.0",
+  "description": "User management module using NodeJs MYSql Bootstrap",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamt619/nodejs-mysql-bootstrap-users-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhamt619/nodejs-mysql-bootstrap-users-management/issues"
+  },
+  "homepage": "https://github.com/shubhamt619/nodejs-mysql-bootstrap-users-management#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
