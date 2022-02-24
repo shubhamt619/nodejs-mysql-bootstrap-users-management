@@ -1,6 +1,16 @@
 var express = require('express');
 var app = express();
+var livereload = require("livereload");
+var connectLiveReload = require("connect-livereload");
 
+const liveReloadServer = livereload.createServer();
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 100);
+});
+
+app.use(connectLiveReload());
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -23,4 +33,4 @@ app.get('/admin', function(req, res) {
 
 
 app.listen(8080);
-console.log('Server is listening on port 8080');
+console.log('Hello There, Server is listening on port 8080');
