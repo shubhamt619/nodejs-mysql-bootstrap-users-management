@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
-
+var UsersController = require("./controllers/users.controller")
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
@@ -29,6 +29,11 @@ app.get('/login', function(req, res) {
 
 app.get('/admin', function(req, res) {
     res.render('admin/index');
+});
+
+// API Routes
+app.get('/api/registerUser', function(req, res) {
+  UsersController.registerUser()
 });
 
 
