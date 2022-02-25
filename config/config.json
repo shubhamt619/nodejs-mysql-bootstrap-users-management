@@ -1,0 +1,32 @@
+{
+    "development": {
+        "define": {
+            "timestamps": false
+        },
+        "username": "dbuser",
+        "password": "12345",
+        "database": "node_ums",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "test": {
+        "define": {
+            "timestamps": false
+        },
+        "username": "dbuser",
+        "password": "12345",
+        "database": "node_ums",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "production": {
+        "define": {
+            "timestamps": false
+        },
+        "username": "dbuser",
+        "password": "12345",
+        "database": "node_ums",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}

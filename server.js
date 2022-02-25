@@ -2,13 +2,15 @@ var express = require('express');
 var app = express();
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
-var UsersController = require("./controllers/users.controller")
+const usersController = require("./controllers/users.controller")
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
   }, 100);
 });
+
+app.set('json spaces', 2)
 
 app.use(connectLiveReload());
 // set the view engine to ejs
@@ -32,9 +34,7 @@ app.get('/admin', function(req, res) {
 });
 
 // API Routes
-app.get('/api/registerUser', function(req, res) {
-  UsersController.registerUser()
-});
+app.get('/allStudents', usersController.getAllStudents);
 
 
 app.listen(8080);
