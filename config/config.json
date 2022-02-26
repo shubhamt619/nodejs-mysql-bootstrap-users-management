@@ -1,32 +1,32 @@
 {
-    "development": {
-        "define": {
-            "timestamps": false
-        },
-        "username": "dbuser",
-        "password": "12345",
-        "database": "node_ums",
-        "host": "localhost",
-        "dialect": "mysql"
+  "development": {
+    "define": {
+      "timestamps": false
     },
-    "test": {
-        "define": {
-            "timestamps": false
-        },
-        "username": "dbuser",
-        "password": "12345",
-        "database": "node_ums",
-        "host": "localhost",
-        "dialect": "mysql"
+    "username": "root",
+    "password": "",
+    "database": "node_ums",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "define": {
+      "timestamps": false
     },
-    "production": {
-        "define": {
-            "timestamps": false
-        },
-        "username": "dbuser",
-        "password": "12345",
-        "database": "node_ums",
-        "host": "localhost",
-        "dialect": "mysql"
-    }
+    "username": "dbuser",
+    "password": "12345",
+    "database": "node_ums",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "define": {
+      "timestamps": false
+    },
+    "username": "dbuser",
+    "password": "12345",
+    "database": "node_ums",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
 }
