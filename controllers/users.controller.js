@@ -19,6 +19,7 @@ module.exports = {
           last_name: req.body.last_name,
           user_name: req.body.user_name,
           role: req.body.role,
+          course: req.body.course,
           gender: req.body.gender,
           email: req.body.email,
           mobile_no: req.body.mobile_no,
