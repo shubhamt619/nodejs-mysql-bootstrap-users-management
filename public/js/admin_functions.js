@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#btnAddUser").click(function (e) {
+  $("#btnAddAdmin").click(function (e) {
     e.preventDefault();
     let data = {
       first_name: $("input[name='first_name']").val(),
