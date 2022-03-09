@@ -4,7 +4,7 @@ module.exports = {
     getAllStudents: async function(req, res){
         user.findAll({
             where: {
-              id: 3
+              role: 1
             }
           }).then(function(students) {
             // students will be an array of all Project instances
@@ -21,12 +21,13 @@ module.exports = {
           role: req.body.role,
           gender: req.body.gender,
           email: req.body.email,
+          mobile_no: req.body.mobile_no,
           password: req.body.password,
       }).then(function (user) {
           if (user) {
               user.status = true
               console.log('Inserted successfully.');
-              res.json(user)
+              location.reload();
           } else {
             console.log('Error occured while inserting data');
             res.json({'status': 'false' })

@@ -3,8 +3,8 @@
     "define": {
       "timestamps": false
     },
-    "username": "root",
-    "password": "",
+    "username": "dbuser",
+    "password": "12345",
     "database": "node_ums",
     "host": "localhost",
     "dialect": "mysql"

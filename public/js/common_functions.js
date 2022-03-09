@@ -7,6 +7,7 @@ $(document).ready(function () {
             "first_name" : $("input[name='first_name']").val(),
             "last_name" : $("input[name='last_name']").val(),
             "user_name" : $("input[name='user_name']").val(),
+            "mobile_no" : $("input[name='mobile_no']").val(),
             "email" : $("input[name='email']").val(),
             "role" : $("select[name='role']").val(),
             "gender" : $("input[name='gender']").val(),

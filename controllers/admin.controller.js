@@ -1,25 +1,36 @@
 const user = require("../models").user;
-import Sequelize from "sequelize";
-const sequelize = new Sequelize("node_ums", "root", "");
-const { QueryTypes } = require("@sequelize/core");
+
 
 module.exports = {
   getDasboard: async function (req, res) {
-    const users = await sequelize
-      .query(
-        "SELECT (SELECT COUNT(*) FROM users WHERE role =  1) AS studentsCount, (SELECT COUNT(*) FROM users WHERE role =  2) AS adminsCount",
-        {
-          type: QueryTypes.SELECT,
+    let studentsCount, adminsCount = 0;
+    try {
+      const p1 = user.count({
+        where: {
+          'role': 1
         }
-      )
-      .then(function (result) {
-        console.log(result);
-        // students will be an array of all Project instances
-        let counts = {
-          studentsCount: result.studentsCount,
-          adminsCount: result.adminsCount,
-        };
-        res.render("admin/index", counts);
+      }).then(c => {
+        studentsCount = c;
+        return c;
       });
-  },
-};
+      const p2 = user.count({
+        where: {
+          'role': 2
+        }
+      }).then(c => {
+        adminsCount = c;
+        return c;
+      });;
+      await Promise.all([p1, p2]);
+      let counts = {
+        studentsCount: studentsCount,
+        adminsCount: adminsCount,
+      };
+      res.render("admin/index", counts);
+    } catch (e) {
+      console.log(e);
+    }
+
+
+  }
+}
