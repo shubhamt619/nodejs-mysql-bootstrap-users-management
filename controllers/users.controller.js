@@ -27,8 +27,7 @@ module.exports = {
       }).then(function (user) {
           if (user) {
               user.status = true
-              console.log('Inserted successfully.');
-              location.reload();
+              res.json({ 'status' : true})
           } else {
             console.log('Error occured while inserting data');
             res.json({'status': 'false' })

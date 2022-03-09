@@ -22,7 +22,7 @@ $(document).ready(function () {
             data: data,
             dataType: "JSON",
             success: function (response) {
-                alert('User added successfully.')
+                Swal.fire('User inserted successully !')
             }
         });
     });
