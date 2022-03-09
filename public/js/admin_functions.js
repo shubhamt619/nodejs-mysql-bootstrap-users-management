@@ -1,32 +1,25 @@
 $(document).ready(function () {
-    
+  $("#btnAddUser").click(function (e) {
+    e.preventDefault();
+    let data = {
+      first_name: $("input[name='first_name']").val(),
+      last_name: $("input[name='last_name']").val(),
+      user_name: $("input[name='user_name']").val(),
+      //   mobile_no: $("input[name='mobile_no']").val(),
+      email: $("input[name='email']").val(),
+      role: $("select[name='role']").val(),
+      gender: $("input[name='gender']").val(),
+      password: $("input[name='password']").val(),
+    };
 
-    $("#btnAddUser").click(function (e) { 
-        e.preventDefault();
-        let data = {
-            "first_name" : $("input[name='first_name']").val(),
-            "last_name" : $("input[name='last_name']").val(),
-            "user_name" : $("input[name='user_name']").val(),
-            "mobile_no" : $("input[name='mobile_no']").val(),
-            "email" : $("input[name='email']").val(),
-            "role" : $("select[name='role']").val(),
-            "gender" : $("input[name='gender']").val(),
-            "password" : $("input[name='password']").val()
-        }
-
-
-        $.ajax({
-            type: "POST",
-            url: "/api/addStudent",
-            data: data,
-            dataType: "JSON",
-            success: function (response) {
-                alert('Student added successfully.')
-            }
-        });
+    $.ajax({
+      type: "POST",
+      url: "/api/addAdmin",
+      data: data,
+      dataType: "JSON",
+      success: function (response) {
+        alert("Student added successfully.");
+      },
     });
-
-
-
-
+  });
 });
