@@ -39,10 +39,16 @@ app.get("/admin/students", function (req, res) {
   res.render("admin/students");
 });
 
+app.get("/admin/admins", function (req, res) {
+  res.render("admin/admins");
+});
+
 // API Routes
 app.get("/allStudents", usersController.getAllStudents);
 
 app.post("/api/addUser", usersController.addUser);
+app.post("/api/addStudent", usersController.addUser);
+app.post("/api/addAdmin", usersController.addUser);
 
 app.listen(8080);
 console.log("Hello There, Server is listening on port 8080");
