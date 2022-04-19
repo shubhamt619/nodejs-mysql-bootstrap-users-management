@@ -26,6 +26,10 @@ app.use(express.static("public"));
 
 // index page is register
 app.get("/", function (req, res) {
+  res.render("login");
+});
+
+app.get("/register", function (req, res) {
   res.render("register");
 });
 
@@ -35,9 +39,10 @@ app.get("/login", function (req, res) {
 
 app.get("/admin", adminController.getDasboard);
 
-app.get("/admin/students", function (req, res) {
-  res.render("admin/students");
-});
+app.get("/admin/students", adminController.getStudents);
+app.get("/admin/add-student", function (req, res) { 
+  res.render("login");
+ });
 
 app.get("/admin/admins", function (req, res) {
   res.render("admin/admins");

@@ -32,5 +32,26 @@ module.exports = {
     }
 
 
+  },
+  getStudents: async function (req, res) {
+    let studentsData = [];
+    try {
+      const p1 = user.findAll({
+        where: {
+          role: 1
+        }
+      }).then(function(students) {
+        // students will be an array of all Project instances
+        studentsData = {
+          studentsList : students
+        };
+    })
+      await Promise.resolve(p1);
+      res.render("admin/students-list", studentsData);
+    } catch (e) {
+      console.log(e);
+    }
+
+
   }
 }
