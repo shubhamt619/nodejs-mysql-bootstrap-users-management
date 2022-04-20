@@ -37,23 +37,30 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
-app.get("/admin", adminController.getDasboard);
-
+app.get("/admin/dashboard", adminController.getDasboard);
 app.get("/admin/students", adminController.getStudents);
 app.get("/admin/add-student", function (req, res) { 
-  res.render("login");
+  res.render("admin/students");
  });
 
 app.get("/admin/admins", function (req, res) {
   res.render("admin/admins");
 });
 
+
+app.get("/student/dashboard", usersController.getDasboard);
+app.get("/student/students", usersController.getStudents);
+
+app.get("/logout", function (req, res) {
+  res.redirect('/login');
+});
 // API Routes
 app.get("/allStudents", usersController.getAllStudents);
 
 app.post("/api/addUser", usersController.addUser);
 app.post("/api/addStudent", usersController.addUser);
 app.post("/api/addAdmin", usersController.addUser);
+app.post("/api/loginUser", usersController.loginUser);
 
 app.listen(8080);
 console.log("Hello There, Server is listening on port 8080");

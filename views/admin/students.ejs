@@ -35,7 +35,7 @@
               aria-expanded="false"
             >
               <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                >Douglas McGee</span
+                >Admin</span
               >
               <img
                 class="img-profile rounded-circle"
@@ -84,7 +84,7 @@
                             class="form-control form-control-user"
                             id="exampleFirstName"
                             placeholder="First Name"
-                            name="firstName"
+                            name="first_name"
                           />
                         </div>
                         <div class="col-sm-4">
@@ -93,7 +93,16 @@
                             class="form-control form-control-user"
                             id="exampleLastName"
                             placeholder="Last Name"
-                            name="lastName"
+                            name="last_name"
+                          />
+                        </div>
+                        <div class="col-sm-4">
+                          <input
+                            type="text"
+                            class="form-control form-control-user"
+                            id="exampleMobileNumber"
+                            placeholder="Mobile no."
+                            name="mobile_no"
                           />
                         </div>
                         <div class="col-sm-4 mb-3 mb-sm-0">
@@ -102,10 +111,31 @@
                             class="form-control form-control-user"
                             id="username"
                             placeholder="Username"
-                            name="username"
+                            name="user_name"
                           />
                         </div>
                       </div>
+                      <div class="form-group row">
+                        <div class="col-sm-2 mb-3 mb-sm-0">
+                            Course :
+                        </div>
+                        <div class="col-sm-2 mb-3 mb-sm-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="course" value="1">
+                                <label class="form-check-label">
+                                  DAC
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 mb-3 mb-sm-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="course" value="2">
+                                <label class="form-check-label">
+                                  DBDA
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                       <div class="form-group row">
                         <div class="col-sm-2 mb-3 mb-sm-0">You are :</div>
                         <div class="col-sm-2 mb-3 mb-sm-0">
@@ -114,6 +144,7 @@
                               class="form-check-input"
                               type="radio"
                               name="gender"
+                              value="1"
                             />
                             <label class="form-check-label"> Male </label>
                           </div>
@@ -124,6 +155,7 @@
                               class="form-check-input"
                               type="radio"
                               name="gender"
+                              value="2"
                             />
                             <label class="form-check-label"> Female </label>
                           </div>
@@ -159,8 +191,8 @@
                         </div> -->
                       </div>
                       <a
-                        id="btnAddUser"
-                        href="#btn_register"
+                        id="btnAddStudent"
+                        href="#"
                         class="btn btn-primary btn-user btn-block"
                       >
                         Add Student
